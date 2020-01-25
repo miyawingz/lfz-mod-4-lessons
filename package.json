@@ -1,0 +1,121 @@
+{
+  "name": "lfz-mod-4-lessons",
+  "version": "1.0.0",
+  "private": true,
+  "license": "SEE LICENSE IN LICENSE",
+  "description": "LearningFuze Module 4 Lessons and Resources",
+  "main": "index.js",
+  "scripts": {
+    "create-exercise": "./scripts/create-exercise.bash",
+    "create-solution": "./scripts/create-solution.bash",
+    "update-packages": "npm-check -u"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.css": [
+      "stylelint --fix",
+      "git add"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Learning-Fuze/lfz-mod-4-lessons.git"
+  },
+  "keywords": [],
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/Learning-Fuze/lfz-mod-4-lessons/issues"
+  },
+  "homepage": "https://github.com/Learning-Fuze/lfz-mod-4-lessons#readme",
+  "devDependencies": {
+    "babel-eslint": "10.0.3",
+    "eslint": "6.7.2",
+    "eslint-config-standard": "14.1.0",
+    "eslint-plugin-cypress": "2.8.0",
+    "eslint-plugin-import": "2.19.1",
+    "eslint-plugin-node": "10.0.0",
+    "eslint-plugin-promise": "4.2.1",
+    "eslint-plugin-react": "7.17.0",
+    "eslint-plugin-standard": "4.0.1",
+    "husky": "3.1.0",
+    "lint-staged": "9.5.0",
+    "npm-check": "5.9.0",
+    "stylelint": "12.0.0",
+    "stylelint-config-recommended": "3.0.0",
+    "stylelint-config-standard": "19.0.0"
+  },
+  "stylelint": {
+    "extends": [
+      "stylelint-config-recommended",
+      "stylelint-config-standard"
+    ]
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "parser": "babel-eslint",
+    "extends": [
+      "plugin:react/recommended",
+      "eslint:recommended",
+      "standard"
+    ],
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    },
+    "rules": {
+      "semi": [
+        "error",
+        "always"
+      ],
+      "padded-blocks": 0,
+      "arrow-parens": [
+        "error",
+        "as-needed"
+      ],
+      "curly": [
+        "error",
+        "multi-line"
+      ],
+      "no-console": [
+        "error",
+        {
+          "allow": [
+            "warn",
+            "error"
+          ]
+        }
+      ],
+      "space-before-function-paren": [
+        "error",
+        {
+          "anonymous": "always",
+          "named": "never",
+          "asyncArrow": "always"
+        }
+      ],
+      "react/prop-types": 0
+    },
+    "overrides": [
+      {
+        "files": [
+          "*.test.js"
+        ],
+        "env": {
+          "mocha": true
+        }
+      }
+    ]
+  }
+}
