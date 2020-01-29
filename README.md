@@ -13,3 +13,4 @@ To get started, follow the instructions in the [Getting Started Guide](guides/ge
 1. [sql-select](exercises/03-sql-select)
 1. [sql-insert](exercises/04-sql-insert)
 1. [sql-update](exercises/05-sql-update)
+1. [sgt-back-end](exercises/06-sgt-back-end)
