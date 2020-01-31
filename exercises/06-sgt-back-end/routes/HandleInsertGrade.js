@@ -2,26 +2,43 @@ const { query } = require('../db');
 const queries = require('../queries');
 
 function HandleInsertGrade(req, res) {
-  const name = req.query.name;
-  const course = req.query.course;
-  const grade = req.query.grade;
+  const name = req.body.name;
+  const course = req.body.course;
+  const grade = req.body.grade;
+  let auth = true;
+  let authMessgae = '';
 
-  // check for valid input? how?
-  // if (typeof (name) !== "string" || typeof (course) !== "string" || grade < 0 || grade > 100) {
-  //     res.status(500).send({
-  //         messgae: 'invalid grade input'
-  //     })
-  //     return;
-  // };
+  if (!name || typeof (name) !== 'string' || !(RegExp('^[A-Za-z ]+$').test(name))) {
+    auth = false;
+    authMessgae = 'invalid name input; ';
+  }
+
+  if (!course || typeof (course) !== 'string') {
+    auth = false;
+    authMessgae += 'invalid course input; ';
+  }
+
+  if (!grade || isNaN(grade) || grade < 0 || grade > 100) {
+    auth = false;
+    authMessgae += 'invalid grade input;';
+  }
+
+  if (!auth) {
+    res.status(500).send({
+      message: authMessgae
+    });
+    return;
+  }
 
   const queryInfo = queries.InsertNewGrade(name, course, grade);
   query(queryInfo.text, queryInfo.values, (err, result) => {
     if (err) {
       res.status(500).send({
-        messgae: 'fail to insert grade'
+        messgae: err.error
       });
       return;
     }
+
     res.send({
       messgae: `Student ${name} in course ${course} with grade ${grade} has been added`
     });

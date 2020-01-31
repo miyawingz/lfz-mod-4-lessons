@@ -4,10 +4,18 @@ const queries = require('../queries');
 function HandleDeleteGrade(req, res) {
   const id = req.params.gradeId;
   const queryInfo = queries.DeleteGrade(id);
+
+  if (!id || isNaN(id)) {
+    res.status(500).send({
+      message: 'invalid id'
+    });
+    return;
+  }
+
   query(queryInfo.text, queryInfo.values, (err, { rowCount }) => {
     if (err) {
       res.status(500).send({
-        message: ''
+        message: err.error
       });
       return;
     }
