@@ -4,7 +4,7 @@ Get related data from two or more tables using `join` in your `select` statement
 
 ### Before You Begin
 
-Be sure to check out a new branch (from `master`) for this exercise. Detailed instructions can be found [**here**](../../guides/before-each-exercise.md). Then navigate to the `exercises/sql-join-and-alias` directory in your terminal.
+Be sure to check out a new branch (from `master`) for this exercise. Detailed instructions can be found [**here**](../../guides/before-each-exercise.md). Then navigate to the `exercises/07-sql-join-and-alias` directory in your terminal.
 
 #### Basic Syntax and Example
 
@@ -278,7 +278,7 @@ For an extra challenge look into `GROUP BY` and `aggregate` functions in Postgre
 
 ### Submitting Your Solution
 
-When your solution is complete, return to the root of your `lfz-full-stack-lessons` directory. Then commit your changes, push, and submit a Pull Request on GitHub. Detailed instructions can be found [**here**](../../guides/after-each-exercise.md).
+When your solution is complete, return to the root of your `lfz-mod-4-lessons` directory. Then commit your changes, push, and submit a Pull Request on GitHub. Detailed instructions can be found [**here**](../../guides/after-each-exercise.md).
 
 ### Quiz
 
