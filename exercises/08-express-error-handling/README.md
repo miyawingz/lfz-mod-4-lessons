@@ -12,6 +12,8 @@ Be sure to check out a new branch (from `master`) for this exercise. Detailed in
 1. Install the required dependencies by running `npm install`.
 1. Brush up on [HTTP Status Codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
 1. Look over the `index.js` file to familiarize yourself with the pre-built endpoints.
+    - Note the use of [try...catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch)
+    - Note the use of [next(error)](https://expressjs.com/en/guide/error-handling.html#the-default-error-handler)
 1. Start your express server.
 1. From your dev environment use [HTTPie](https://httpie.org) to test some of the endpoints and note the output.
     - **Example:** http `localhost:9000/api/auth-error`
@@ -50,4 +52,7 @@ When your solution is complete, return to the root of your `lfz-mod-4-lessons` d
 
 ### Quiz
 
-- ADD QUIZ QUESTIONS
+- What is the benefit to creating a custom error handler for your backend?
+- What happens when you call `next()` with an error as an argument?
+- How does express know you intend a middleware to be used as an error handler?
+- What are the 5 classes and ranges of response codes?
