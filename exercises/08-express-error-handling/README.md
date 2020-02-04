@@ -16,7 +16,7 @@ Be sure to check out a new branch (from `master`) for this exercise. Detailed in
     - Note the use of [next(error)](https://expressjs.com/en/guide/error-handling.html#the-default-error-handler)
 1. Start your express server.
 1. From your dev environment use [HTTPie](https://httpie.org) to test some of the endpoints and note the output.
-    - **Example:** http `localhost:9000/api/auth-error`
+    - **Example:** `http localhost:9000/api/auth-error`
 1. By default express handles errors by sending HTML back to the client, for most APIs this isn't useful. Usually we want responses back as JSON, even for errors, this allows the client to decide how and where to display the errors.
 1. Read about [Error Handling](https://expressjs.com/en/guide/error-handling.html) in Express.
 1. Read about [The Default Error Handler](https://expressjs.com/en/guide/error-handling.html#the-default-error-handler) in Express.
