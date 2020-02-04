@@ -52,4 +52,7 @@ When your solution is complete, return to the root of your `lfz-mod-4-lessons` d
 
 ### Quiz
 
-- ADD QUIZ QUESTIONS
+- What is the benefit to creating a custom error handler for your backend?
+- What happens when you call `next()` with an error as an argument?
+- How does express know you intend a middleware to be used as an error handler?
+- What are the 5 classes and ranges of response codes?
