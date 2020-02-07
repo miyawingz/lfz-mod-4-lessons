@@ -38,7 +38,7 @@ app.get('/api/server-error', (req, res, next) => {
 
 app.get('/api/uncaught-error', (req, res, next) => {
   try {
-    iDoNotExist;
+    iDoNotExist; // eslint-disable-line
   } catch (error) {
     next(error);
   }
@@ -53,5 +53,19 @@ app.get('/api/unprocessable-entity', (req, res, next) => {
 });
 
 app.listen(PORT, () => {
-  console.log('Server listening on PORT:', PORT);
+  console.log('Server listening on PORT:', PORT); // eslint-disable-line
+});
+
+app.use(function (err, req, res, next) {
+  if (err instanceof ApiError) {
+    res.status(err.status).send({
+      message: err.message,
+      status: err.status
+    });
+  } else {
+    res.status(500).send({
+      message: err.message,
+      status: 500
+    });
+  }
 });

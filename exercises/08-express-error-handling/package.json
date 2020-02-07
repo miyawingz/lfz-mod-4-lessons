@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Mia Zhang",
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^2.0.2"
